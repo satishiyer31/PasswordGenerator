@@ -71,6 +71,7 @@ function generatePassword() {
 return pwd.substr(1,passwordConstraints.passwordLength);
 }
 
+//function that get the password length from user. Validates user input in a loop until acceptable values are entered.
 function getPasswordLength() {
 
     var inRange = false;
@@ -90,7 +91,7 @@ function getPasswordLength() {
 return passLength;
 }
 
-//Function that shows a prompt add validates the Y/N input provided by user.
+//Function that shows a custom message prompt add validates the Y/N input provided by user.
  function getSelection(message) {
  
   var optionSelected = false;
@@ -116,7 +117,7 @@ return passLength;
 
 
 
-//Fill up the PasswordConstraints Object with user selection 
+//function that populates the PasswordConstraints Object with validated user selection. Loops until atleast one constaint selected 
 function getPasswordConstraints() {
 
     do {
