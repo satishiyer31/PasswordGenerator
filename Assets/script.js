@@ -15,7 +15,7 @@ var passwordConstraints = {
 var upperChars ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerChars ="abcdefghijklmnopqrstuvwxyz";
 var numbers ="1234567890";
-var specialChars ="!@#$%^&*()"
+var specialChars ="!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
 
 //For each type, Get the data in arrays using split
@@ -120,10 +120,12 @@ return passLength;
 //function that populates the PasswordConstraints Object with validated user selection. Loops until atleast one constaint selected 
 function getPasswordConstraints() {
 
+
+  passwordConstraints.passwordLength= getPasswordLength();
   do {
       
       atleastOneTypeSelected=false; //reset previous selections
-      passwordConstraints.passwordLength= getPasswordLength();
+      
       passwordConstraints.includeUpper= getSelection("Do you want the password to contain upper cases? (Y/N)");
       passwordConstraints.includeLower= getSelection("Do you want the password to contain lower cases? (Y/N)");
       passwordConstraints.includeNumbers= getSelection("Do you want the password to have numbers? (Y/N)");
