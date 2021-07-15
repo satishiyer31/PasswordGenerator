@@ -36,6 +36,6 @@ The following image shows the web application's appearance and functionality:
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
 
 Application deployed at: https://satishiyer31.github.io/PasswordGenerator/
-
+Github repository link: https://github.com/satishiyer31/PasswordGenerator
 
 
