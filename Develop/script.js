@@ -120,23 +120,21 @@ return passLength;
 //function that populates the PasswordConstraints Object with validated user selection. Loops until atleast one constaint selected 
 function getPasswordConstraints() {
 
-    do {
+  do {
+      
+      atleastOneTypeSelected=false; //reset previous selections
+      passwordConstraints.passwordLength= getPasswordLength();
+      passwordConstraints.includeUpper= getSelection("Do you want the password to contain upper cases? (Y/N)");
+      passwordConstraints.includeLower= getSelection("Do you want the password to contain lower cases? (Y/N)");
+      passwordConstraints.includeNumbers= getSelection("Do you want the password to have numbers? (Y/N)");
+      passwordConstraints.includeSpecial= getSelection("Do you want the password to have special characters? Y/N");
 
-          atleastOneTypeSelected=false; //reset previous selections
-          passwordConstraints.passwordLength= getPasswordLength();
-          passwordConstraints.includeUpper= getSelection("Do you want the password to contain upper cases? (Y/N)");
-          passwordConstraints.includeLower= getSelection("Do you want the password to contain lower cases? (Y/N)");
-          passwordConstraints.includeNumbers= getSelection("Do you want the password to have numbers? (Y/N)");
-          passwordConstraints.includeSpecial= getSelection("Do you want the password to have special characters? Y/N");
+      if (passwordConstraints.includeLower ==true || passwordConstraints.includeUpper==true || passwordConstraints.includeNumbers==true || passwordConstraints.includeSpecial==true) {
+            atleastOneTypeSelected = true;
+          }
+      else 
+        confirm ('You must select atleast one of the constraints.. lets do this again');
 
-        
-
-            if (passwordConstraints.includeLower ==true || passwordConstraints.includeUpper==true || passwordConstraints.includeNumbers==true || passwordConstraints.includeSpecial==true) {
-                  atleastOneTypeSelected = true;
-            }
-            else 
-                  confirm ('You must select atleast one of the constraints.. lets do this again');
-
-    } while (atleastOneTypeSelected == false);
+  } while (atleastOneTypeSelected == false);
 
 }
